@@ -7,6 +7,7 @@ using developwithpassion.bdddoc.core;
 using nothinbutdotnetprep.collections;
 using nothinbutdotnetprep.infrastructure.extensions;
 using nothinbutdotnetprep.infrastructure.searching;
+using nothinbutdotnetprep.infrastructure.sorting;
 
 /* The following set of Contexts (TestFixture) are in place to specify the functionality that you need to complete for the MovieLibrary class.
  * MovieLibrary is an aggregate root for the Movie class. It exposes the ability to search,sort, and iterate over all of the movies that it aggregates.
@@ -304,6 +305,8 @@ namespace nothinbutdotnetprep.tests
             {
 
                 var results = sut.sort_all_movies_by_title_descending();
+                //ChainedComparer<Movie> cmp = new ChainedComparer<Movie>(new MovieTitleComparer(), new MovieRatingComparer);
+                
 
                 results.should_only_contain_in_order(theres_something_about_mary, the_ring, shrek, pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
                                                      cars, a_bugs_life);

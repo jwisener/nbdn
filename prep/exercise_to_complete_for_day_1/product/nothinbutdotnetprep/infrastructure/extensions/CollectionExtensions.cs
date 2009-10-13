@@ -14,5 +14,13 @@ namespace nothinbutdotnetprep.infrastructure.extensions
         {
             foreach (var item in list) if (condition.is_satisfied_by(item)) yield return item;
         }
+
+        static public IEnumerable<T> sort<T>(this IEnumerable<T> list, IComparer<T> comparer) {
+
+            var results = new List<T>(list);
+            results.Sort(comparer);
+
+            foreach(var item in results) yield return item;
+        }
     }
 }

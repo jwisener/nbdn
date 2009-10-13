@@ -34,7 +34,7 @@ namespace nothinbutdotnetprep.infrastructure.searching
                 {
                     have_match = have_match ||
                                  property_accessor(f).Equals(value);
-                }
+                }   
                 return have_match;
             });
         }
